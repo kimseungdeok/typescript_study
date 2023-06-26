@@ -8,6 +8,11 @@ function jsAdd(): number {
     return 10;
 }
 
+// 함수의 옵셔널 파라미터
+function add2(a: number, b: number, c?: number) {
 
+    return a + b;
+
+}
 
 
