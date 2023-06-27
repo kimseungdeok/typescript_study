@@ -14,7 +14,7 @@ let junho3: Person2 = {
 };
 
 type MyString = string;
-let str: MyString = "hello";
+// let str: MyString = "hello";
 
 type Todo = { id: string; title: string; done: boolean };
 function getTodo(todo: Todo) {}
