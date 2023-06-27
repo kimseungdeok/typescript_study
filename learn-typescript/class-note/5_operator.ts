@@ -17,3 +17,32 @@ function logMessage1(value: string | number) {
 }
 
 logMessage1("hello");
+
+interface Developer11 {
+    name: string;
+    skill: string;
+}
+
+interface Person11 {
+    name: string;
+    age: number;
+}
+
+function askSomeone(someone: Person11 | Developer11) {
+    someone.name; // 공통된 속성만 접근 가능
+    // someone.skill; // error
+    // someone.age; // error
+}
+
+askSomeone({ name: "디벨로퍼", skill: "웹 개발" });
+askSomeone({ name: "캡틴", age: 100 });
+askSomeone({ name: "캡틴" });
+
+function askSomeone1(someone: Developer11 & Person11) {
+    someone.name;
+    someone.skill;
+    someone.age;
+}
+
+// askSomeone1({ name: "디벨로퍼", skill: "웹 개발", age: 100 });
+askSomeone1({ name: "캡틴", age: 100, skill: "웹 개발" });
