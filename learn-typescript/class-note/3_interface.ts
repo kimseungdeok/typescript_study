@@ -37,3 +37,28 @@ interface StringArray {
 
 let arr1: StringArray = ['a', 'b', 'c'];
 // arr1[0] = 10; // error
+
+interface StringArray1 {
+    [index: string]: string;
+}
+
+const myArray: StringArray1 = {}
+
+
+
+// 딕셔너리 패턴
+interface StringRegexDictionary {
+    [key: string]: RegExp;
+}
+
+let obj1: StringRegexDictionary = {
+    // sth: /abc/,
+    cssFile: /\.css$/,
+    jsFile: /\.js$/,
+}
+
+// obj1[] = 'a'; // error
+obj1['cssFile'] = /ddd/; // error
+obj1['cssFile'] = /abc/;
+// obj1['cssFile'] = 123; // error
+
