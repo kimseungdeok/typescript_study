@@ -29,3 +29,11 @@ let sum1: SumFunction;
 sum1 = function(a: number, b: number): number {
     return a + b;
 }
+
+// 인덱싱
+interface StringArray {
+    [index: number]: string;
+}
+
+let arr1: StringArray = ['a', 'b', 'c'];
+// arr1[0] = 10; // error
