@@ -45,17 +45,29 @@ function showCompleted(): { id: number; title: string; done: boolean }[] {
 function addTwoTodoItems(
     todo1: { id: number; title: string; done: boolean },
     todo2: { id: number; title: string; done: boolean }
-) {
+): void {
     // addTodo() 함수를 두 번 호출하여 todoItems에 새 할 일이 2개 추가되어야 합니다.
-    todoItems.push(todo1);
-    todoItems.push(todo2);
+    addTodo(todo1);
+    addTodo(todo2);
 }
 
 // NOTE: 유틸 함수
-function log() {
+function log(): void {
     console.log(todoItems);
 }
 
+const todo1 = {
+    id: 4,
+    title: "item 4",
+    done: false,
+};
+
+const todo2 = {
+    id: 5,
+    title: "item 5",
+    done: false,
+};
+
 todoItems = fetchTodoItems();
-addTwoTodoItems();
+addTwoTodoItems(todo1, todo2);
 log();
