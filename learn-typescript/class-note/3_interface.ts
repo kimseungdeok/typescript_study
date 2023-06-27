@@ -62,3 +62,18 @@ obj1['cssFile'] = /ddd/; // error
 obj1['cssFile'] = /abc/;
 // obj1['cssFile'] = 123; // error
 
+// 인터페이스 확장
+interface Person1 {
+    name: string;
+    age: number;
+}
+
+interface Developer1 extends Person1 {
+    language: string;
+}
+
+const junho2: Developer1 = {
+    name: 'junho',
+    age: 20,
+    language: 'ts'
+}
