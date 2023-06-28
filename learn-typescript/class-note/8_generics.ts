@@ -84,3 +84,22 @@ function logTextLength2<T extends LengthType>(text: T): T {
     text.length;
     return text;
 }
+
+logTextLength2("a");
+// logTextLength2(10); // error
+logTextLength2({ length: 10 });
+
+// 제네릭 타입 제한 3 - keyof
+interface ShoppingItem {
+    name: string;
+    price: number;
+    stock: number;
+}
+
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T): T {
+    return itemOption;
+}
+
+// getShoppingItemOption(10); // error
+// getShoppingItemOption<string>("a"); // error
+getShoppingItemOption("name"); // name
