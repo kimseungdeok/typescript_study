@@ -48,3 +48,18 @@ function logText4<T>(text: T): T {
 const str = logText4<string>("abc");
 str.split("");
 const num = logText4<number>(10);
+
+
+interface Dropdown {
+    value: string;
+    selected: boolean;
+}
+
+const obj: Dropdown = { value: "abc", selected: false };
+
+interface Dropdown2<T> {
+    value: T;
+    selected: boolean;
+}
+
+const obj2: Dropdown2<string> = { value: "abc", selected: false };
